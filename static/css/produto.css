@@ -1,0 +1,103 @@
+/* Estilos gerais para a página de detalhes do produto
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f3f3;
+    color: #333;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #6a0dad, #a72b8d);
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-bottom: 2px solid #fff;
+    border-radius: 0 0 15px 15px;
+}
+
+header .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-detail {
+    padding: 100px 0; /}
+
+.product-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-info img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product-description {
+    max-width: 600px;
+    text-align: center;
+}
+
+.product-description h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.product-description p {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.product-description form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-description label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.product-description input {
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.cta-button {
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.cta-button:hover {
+    background-color: #ff3b2f;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+*/
