@@ -8,19 +8,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
 <body>
     <header>
         <div class="container">
             <h1>Mama's Bakery</h1>
             <nav>
-                <ul>
+                <ul class="nav-links">
                     <li><a href="{{ url_for('index') }}">Início</a></li>
                     <li><a href="{{ url_for('sobre') }}">Sobre</a></li>
                     <li><a href="{{ url_for('cardapio') }}">Cardápio</a></li>
                     <li><a href="{{ url_for('contato') }}">Contato</a></li>
                 </ul>
             </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
 
@@ -67,5 +71,6 @@
             <p>&copy; 2024 Mama's Bakery. Todos os direitos reservados.</p>
         </div>
     </footer>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

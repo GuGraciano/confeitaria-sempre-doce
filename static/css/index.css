@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
     background-color: #f3f3f3;
     color: #333;
+    padding-top: 80px; /* Espaço para evitar que o header sobreponha o conteúdo */
 }
 
 .container {
@@ -19,24 +20,36 @@ body {
     padding: 20px;
 }
 
+/* Header */
 header {
-    background-color: #6a0dad;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #6a0dad, #a72b8d);
     color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-bottom: 2px solid #fff;
+    border-radius: 0 0 15px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
-    margin-bottom: 10px;
-    font-size: 2.5em;
-    animation: fadeInDown 1s ease-in-out;
+    margin: 0;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
+/* Navegação */
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    margin: 0;
 }
 
 nav ul li {
@@ -54,6 +67,23 @@ nav ul li a:hover {
     color: #000;
 }
 
+/* Menu hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto; /* Alinha o menu hamburguer à direita */
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: #fff;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+/* Seção Hero */
 .hero {
     position: relative;
     background: url('../img/bolo.jpg') no-repeat center center/cover;
@@ -70,7 +100,7 @@ nav ul li a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* overlay with 50% opacity */
+    background: rgba(0, 0, 0, 0.5); /* overlay com 50% de opacidade */
 }
 
 .hero .container {
@@ -102,12 +132,13 @@ nav ul li a:hover {
     background-color: #ff3b2f;
 }
 
-.about,
-.menu {
+/* Sobre e Menu */
+.about, .menu {
     padding: 50px 0;
     text-align: center;
 }
 
+/* Itens do Menu */
 .menu-items {
     display: flex;
     justify-content: space-around;
@@ -122,7 +153,7 @@ nav ul li a:hover {
     margin: 10px;
     flex: 1 1 calc(33% - 40px);
     max-width: calc(33% - 40px);
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
     border-radius: 15px;
@@ -132,7 +163,7 @@ nav ul li a:hover {
     width: 100%;
     height: auto;
     margin-bottom: 15px;
-    max-height: 300px; /* Set a max-height to maintain vertical images */
+    max-height: 300px;
     object-fit: cover;
     border-radius: 15px;
 }
@@ -147,6 +178,7 @@ nav ul li a:hover {
     color: #6a0dad;
 }
 
+/* Footer */
 footer {
     background-color: #333;
     color: #fff;
@@ -154,17 +186,61 @@ footer {
     padding: 10px 0;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
     .container {
         width: 95%;
     }
+
+    header {
+        padding: 10px;
+    }
+
     .menu-item {
         flex: 1 1 100%;
         max-width: 100%;
     }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 999;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
 }
 
-/* Animations */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+    }
+
+    body {
+        padding-top: 70px;
+    }
+}
+
+/* Animações */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -182,102 +258,5 @@ footer {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-/* Cabeçalho fixo e estilizado */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(to right, #6a0dad, #a72b8d); /* Gradiente com as cores anteriores */
-    color: #fff;
-    padding: 15px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
-    z-index: 1000; /* Certifique-se de que o cabeçalho está acima de outros elementos */
-    border-bottom: 2px solid #fff; /* Linha de separação inferior */
-    border-radius: 0 0 15px 15px; /* Bordas arredondadas na parte inferior */
-    display: flex;
-    justify-content: center; /* Alinha o conteúdo no centro */
-}
-
-header .container {
-    width: 90%; /* Ajuste a largura conforme necessário */
-    max-width: 1200px; /* Largura máxima para telas grandes */
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2em;
-    font-weight: 600;
-    letter-spacing: 1px; /* Espaçamento entre letras */
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-}
-
-nav ul li {
-    margin: 0 20px; /* Espaço maior entre os itens do menu */
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s, text-shadow 0.3s;
-}
-
-nav ul li a:hover {
-    color: #000; /* Cor preta no hover */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombra de texto no hover */
-}
-
-/* Adicionando um espaçamento para o conteúdo abaixo do cabeçalho */
-body {
-    padding-top: 80px; /* Ajuste conforme a altura do cabeçalho */
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        padding: 10px 0;
-    }
-
-    header .container {
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul {
-        display: block;
-        text-align: center;
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Margem maior entre os itens no mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5em;
-    }
-
-    nav ul li a {
-        font-size: 0.9em;
-    }
-
-    body {
-        padding-top: 70px; /* Ajuste para telas menores */
     }
 }
